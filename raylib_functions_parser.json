@@ -1,0 +1,7174 @@
+{
+  "functions_count": 469,
+  "functions": [
+    {
+      "name": "InitWindow",
+      "description": "Initialize window and OpenGL context",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "const char *",
+          "name": "title"
+        }
+      ]
+    },
+    {
+      "name": "WindowShouldClose",
+      "description": "Check if KEY_ESCAPE pressed or Close icon pressed",
+      "return": "bool"
+    },
+    {
+      "name": "CloseWindow",
+      "description": "Close window and unload OpenGL context",
+      "return": "void"
+    },
+    {
+      "name": "IsWindowReady",
+      "description": "Check if window has been initialized successfully",
+      "return": "bool"
+    },
+    {
+      "name": "IsWindowFullscreen",
+      "description": "Check if window is currently fullscreen",
+      "return": "bool"
+    },
+    {
+      "name": "IsWindowHidden",
+      "description": "Check if window is currently hidden (only PLATFORM_DESKTOP)",
+      "return": "bool"
+    },
+    {
+      "name": "IsWindowMinimized",
+      "description": "Check if window is currently minimized (only PLATFORM_DESKTOP)",
+      "return": "bool"
+    },
+    {
+      "name": "IsWindowMaximized",
+      "description": "Check if window is currently maximized (only PLATFORM_DESKTOP)",
+      "return": "bool"
+    },
+    {
+      "name": "IsWindowFocused",
+      "description": "Check if window is currently focused (only PLATFORM_DESKTOP)",
+      "return": "bool"
+    },
+    {
+      "name": "IsWindowResized",
+      "description": "Check if window has been resized last frame",
+      "return": "bool"
+    },
+    {
+      "name": "IsWindowState",
+      "description": "Check if one specific window flag is enabled",
+      "return": "bool",
+      "params": [
+        {
+          "type": "unsigned int",
+          "name": "flag"
+        }
+      ]
+    },
+    {
+      "name": "SetWindowState",
+      "description": "Set window configuration state using flags",
+      "return": "void",
+      "params": [
+        {
+          "type": "unsigned int",
+          "name": "flags"
+        }
+      ]
+    },
+    {
+      "name": "ClearWindowState",
+      "description": "Clear window configuration state flags",
+      "return": "void",
+      "params": [
+        {
+          "type": "unsigned int",
+          "name": "flags"
+        }
+      ]
+    },
+    {
+      "name": "ToggleFullscreen",
+      "description": "Toggle window state: fullscreen/windowed (only PLATFORM_DESKTOP)",
+      "return": "void"
+    },
+    {
+      "name": "MaximizeWindow",
+      "description": "Set window state: maximized, if resizable (only PLATFORM_DESKTOP)",
+      "return": "void"
+    },
+    {
+      "name": "MinimizeWindow",
+      "description": "Set window state: minimized, if resizable (only PLATFORM_DESKTOP)",
+      "return": "void"
+    },
+    {
+      "name": "RestoreWindow",
+      "description": "Set window state: not minimized/maximized (only PLATFORM_DESKTOP)",
+      "return": "void"
+    },
+    {
+      "name": "SetWindowIcon",
+      "description": "Set icon for window (only PLATFORM_DESKTOP)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "SetWindowTitle",
+      "description": "Set title for window (only PLATFORM_DESKTOP)",
+      "return": "void",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "title"
+        }
+      ]
+    },
+    {
+      "name": "SetWindowPosition",
+      "description": "Set window position on screen (only PLATFORM_DESKTOP)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "x"
+        },
+        {
+          "type": "int",
+          "name": "y"
+        }
+      ]
+    },
+    {
+      "name": "SetWindowMonitor",
+      "description": "Set monitor for the current window (fullscreen mode)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "monitor"
+        }
+      ]
+    },
+    {
+      "name": "SetWindowMinSize",
+      "description": "Set window minimum dimensions (for FLAG_WINDOW_RESIZABLE)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        }
+      ]
+    },
+    {
+      "name": "SetWindowSize",
+      "description": "Set window dimensions",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        }
+      ]
+    },
+    {
+      "name": "GetWindowHandle",
+      "description": "Get native window handle",
+      "return": "void *"
+    },
+    {
+      "name": "GetScreenWidth",
+      "description": "Get current screen width",
+      "return": "int"
+    },
+    {
+      "name": "GetScreenHeight",
+      "description": "Get current screen height",
+      "return": "int"
+    },
+    {
+      "name": "GetMonitorCount",
+      "description": "Get number of connected monitors",
+      "return": "int"
+    },
+    {
+      "name": "GetCurrentMonitor",
+      "description": "Get current connected monitor",
+      "return": "int"
+    },
+    {
+      "name": "GetMonitorPosition",
+      "description": "Get specified monitor position",
+      "return": "Vector2",
+      "params": [
+        {
+          "type": "int",
+          "name": "monitor"
+        }
+      ]
+    },
+    {
+      "name": "GetMonitorWidth",
+      "description": "Get specified monitor width (max available by monitor)",
+      "return": "int",
+      "params": [
+        {
+          "type": "int",
+          "name": "monitor"
+        }
+      ]
+    },
+    {
+      "name": "GetMonitorHeight",
+      "description": "Get specified monitor height (max available by monitor)",
+      "return": "int",
+      "params": [
+        {
+          "type": "int",
+          "name": "monitor"
+        }
+      ]
+    },
+    {
+      "name": "GetMonitorPhysicalWidth",
+      "description": "Get specified monitor physical width in millimetres",
+      "return": "int",
+      "params": [
+        {
+          "type": "int",
+          "name": "monitor"
+        }
+      ]
+    },
+    {
+      "name": "GetMonitorPhysicalHeight",
+      "description": "Get specified monitor physical height in millimetres",
+      "return": "int",
+      "params": [
+        {
+          "type": "int",
+          "name": "monitor"
+        }
+      ]
+    },
+    {
+      "name": "GetMonitorRefreshRate",
+      "description": "Get specified monitor refresh rate",
+      "return": "int",
+      "params": [
+        {
+          "type": "int",
+          "name": "monitor"
+        }
+      ]
+    },
+    {
+      "name": "GetWindowPosition",
+      "description": "Get window position XY on monitor",
+      "return": "Vector2"
+    },
+    {
+      "name": "GetWindowScaleDPI",
+      "description": "Get window scale DPI factor",
+      "return": "Vector2"
+    },
+    {
+      "name": "GetMonitorName",
+      "description": "Get the human-readable, UTF-8 encoded name of the primary monitor",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "int",
+          "name": "monitor"
+        }
+      ]
+    },
+    {
+      "name": "SetClipboardText",
+      "description": "Set clipboard text content",
+      "return": "void",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        }
+      ]
+    },
+    {
+      "name": "GetClipboardText",
+      "description": "Get clipboard text content",
+      "return": "const char *"
+    },
+    {
+      "name": "ShowCursor",
+      "description": "Shows cursor",
+      "return": "void"
+    },
+    {
+      "name": "HideCursor",
+      "description": "Hides cursor",
+      "return": "void"
+    },
+    {
+      "name": "IsCursorHidden",
+      "description": "Check if cursor is not visible",
+      "return": "bool"
+    },
+    {
+      "name": "EnableCursor",
+      "description": "Enables cursor (unlock cursor)",
+      "return": "void"
+    },
+    {
+      "name": "DisableCursor",
+      "description": "Disables cursor (lock cursor)",
+      "return": "void"
+    },
+    {
+      "name": "IsCursorOnScreen",
+      "description": "Check if cursor is on the current screen.",
+      "return": "bool"
+    },
+    {
+      "name": "ClearBackground",
+      "description": "Set background color (framebuffer clear color)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "BeginDrawing",
+      "description": "Setup canvas (framebuffer) to start drawing",
+      "return": "void"
+    },
+    {
+      "name": "EndDrawing",
+      "description": "End canvas drawing and swap buffers (double buffering)",
+      "return": "void"
+    },
+    {
+      "name": "BeginMode2D",
+      "description": "Initialize 2D mode with custom camera (2D)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Camera2D",
+          "name": "camera"
+        }
+      ]
+    },
+    {
+      "name": "EndMode2D",
+      "description": "Ends 2D mode with custom camera",
+      "return": "void"
+    },
+    {
+      "name": "BeginMode3D",
+      "description": "Initializes 3D mode with custom camera (3D)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Camera3D",
+          "name": "camera"
+        }
+      ]
+    },
+    {
+      "name": "EndMode3D",
+      "description": "Ends 3D mode and returns to default 2D orthographic mode",
+      "return": "void"
+    },
+    {
+      "name": "BeginTextureMode",
+      "description": "Initializes render texture for drawing",
+      "return": "void",
+      "params": [
+        {
+          "type": "RenderTexture2D",
+          "name": "target"
+        }
+      ]
+    },
+    {
+      "name": "EndTextureMode",
+      "description": "Ends drawing to render texture",
+      "return": "void"
+    },
+    {
+      "name": "BeginShaderMode",
+      "description": "Begin custom shader drawing",
+      "return": "void",
+      "params": [
+        {
+          "type": "Shader",
+          "name": "shader"
+        }
+      ]
+    },
+    {
+      "name": "EndShaderMode",
+      "description": "End custom shader drawing (use default shader)",
+      "return": "void"
+    },
+    {
+      "name": "BeginBlendMode",
+      "description": "Begin blending mode (alpha, additive, multiplied)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "mode"
+        }
+      ]
+    },
+    {
+      "name": "EndBlendMode",
+      "description": "End blending mode (reset to default: alpha blending)",
+      "return": "void"
+    },
+    {
+      "name": "BeginScissorMode",
+      "description": "Begin scissor mode (define screen area for following drawing)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "x"
+        },
+        {
+          "type": "int",
+          "name": "y"
+        },
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        }
+      ]
+    },
+    {
+      "name": "EndScissorMode",
+      "description": "End scissor mode",
+      "return": "void"
+    },
+    {
+      "name": "BeginVrStereoMode",
+      "description": "Begin stereo rendering (requires VR simulator)",
+      "return": "void",
+      "params": [
+        {
+          "type": "VrStereoConfig",
+          "name": "config"
+        }
+      ]
+    },
+    {
+      "name": "EndVrStereoMode",
+      "description": "End stereo rendering (requires VR simulator)",
+      "return": "void"
+    },
+    {
+      "name": "LoadVrStereoConfig",
+      "description": "Load VR stereo config for VR simulator device parameters",
+      "return": "VrStereoConfig",
+      "params": [
+        {
+          "type": "VrDeviceInfo",
+          "name": "device"
+        }
+      ]
+    },
+    {
+      "name": "UnloadVrStereoConfig",
+      "description": "Unload VR stereo config",
+      "return": "void",
+      "params": [
+        {
+          "type": "VrStereoConfig",
+          "name": "config"
+        }
+      ]
+    },
+    {
+      "name": "LoadShader",
+      "description": "Load shader from files and bind default locations",
+      "return": "Shader",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "vsFileName"
+        },
+        {
+          "type": "const char *",
+          "name": "fsFileName"
+        }
+      ]
+    },
+    {
+      "name": "LoadShaderFromMemory",
+      "description": "Load shader from code strings and bind default locations",
+      "return": "Shader",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "vsCode"
+        },
+        {
+          "type": "const char *",
+          "name": "fsCode"
+        }
+      ]
+    },
+    {
+      "name": "GetShaderLocation",
+      "description": "Get shader uniform location",
+      "return": "int",
+      "params": [
+        {
+          "type": "Shader",
+          "name": "shader"
+        },
+        {
+          "type": "const char *",
+          "name": "uniformName"
+        }
+      ]
+    },
+    {
+      "name": "GetShaderLocationAttrib",
+      "description": "Get shader attribute location",
+      "return": "int",
+      "params": [
+        {
+          "type": "Shader",
+          "name": "shader"
+        },
+        {
+          "type": "const char *",
+          "name": "attribName"
+        }
+      ]
+    },
+    {
+      "name": "SetShaderValue",
+      "description": "Set shader uniform value",
+      "return": "void",
+      "params": [
+        {
+          "type": "Shader",
+          "name": "shader"
+        },
+        {
+          "type": "int",
+          "name": "locIndex"
+        },
+        {
+          "type": "const void *",
+          "name": "value"
+        },
+        {
+          "type": "int",
+          "name": "uniformType"
+        }
+      ]
+    },
+    {
+      "name": "SetShaderValueV",
+      "description": "Set shader uniform value vector",
+      "return": "void",
+      "params": [
+        {
+          "type": "Shader",
+          "name": "shader"
+        },
+        {
+          "type": "int",
+          "name": "locIndex"
+        },
+        {
+          "type": "const void *",
+          "name": "value"
+        },
+        {
+          "type": "int",
+          "name": "uniformType"
+        },
+        {
+          "type": "int",
+          "name": "count"
+        }
+      ]
+    },
+    {
+      "name": "SetShaderValueMatrix",
+      "description": "Set shader uniform value (matrix 4x4)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Shader",
+          "name": "shader"
+        },
+        {
+          "type": "int",
+          "name": "locIndex"
+        },
+        {
+          "type": "Matrix",
+          "name": "mat"
+        }
+      ]
+    },
+    {
+      "name": "SetShaderValueTexture",
+      "description": "Set shader uniform value for texture (sampler2d)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Shader",
+          "name": "shader"
+        },
+        {
+          "type": "int",
+          "name": "locIndex"
+        },
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        }
+      ]
+    },
+    {
+      "name": "UnloadShader",
+      "description": "Unload shader from GPU memory (VRAM)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Shader",
+          "name": "shader"
+        }
+      ]
+    },
+    {
+      "name": "GetMouseRay",
+      "description": "Returns a ray trace from mouse position",
+      "return": "Ray",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "mousePosition"
+        },
+        {
+          "type": "Camera",
+          "name": "camera"
+        }
+      ]
+    },
+    {
+      "name": "GetCameraMatrix",
+      "description": "Returns camera transform matrix (view matrix)",
+      "return": "Matrix",
+      "params": [
+        {
+          "type": "Camera",
+          "name": "camera"
+        }
+      ]
+    },
+    {
+      "name": "GetCameraMatrix2D",
+      "description": "Returns camera 2d transform matrix",
+      "return": "Matrix",
+      "params": [
+        {
+          "type": "Camera2D",
+          "name": "camera"
+        }
+      ]
+    },
+    {
+      "name": "GetWorldToScreen",
+      "description": "Returns the screen space position for a 3d world space position",
+      "return": "Vector2",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "Camera",
+          "name": "camera"
+        }
+      ]
+    },
+    {
+      "name": "GetWorldToScreenEx",
+      "description": "Returns size position for a 3d world space position",
+      "return": "Vector2",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "Camera",
+          "name": "camera"
+        },
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        }
+      ]
+    },
+    {
+      "name": "GetWorldToScreen2D",
+      "description": "Returns the screen space position for a 2d camera world space position",
+      "return": "Vector2",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "Camera2D",
+          "name": "camera"
+        }
+      ]
+    },
+    {
+      "name": "GetScreenToWorld2D",
+      "description": "Returns the world space position for a 2d camera screen space position",
+      "return": "Vector2",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "Camera2D",
+          "name": "camera"
+        }
+      ]
+    },
+    {
+      "name": "SetTargetFPS",
+      "description": "Set target FPS (maximum)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "fps"
+        }
+      ]
+    },
+    {
+      "name": "GetFPS",
+      "description": "Returns current FPS",
+      "return": "int"
+    },
+    {
+      "name": "GetFrameTime",
+      "description": "Returns time in seconds for last frame drawn (delta time)",
+      "return": "float"
+    },
+    {
+      "name": "GetTime",
+      "description": "Returns elapsed time in seconds since InitWindow()",
+      "return": "double"
+    },
+    {
+      "name": "GetRandomValue",
+      "description": "Returns a random value between min and max (both included)",
+      "return": "int",
+      "params": [
+        {
+          "type": "int",
+          "name": "min"
+        },
+        {
+          "type": "int",
+          "name": "max"
+        }
+      ]
+    },
+    {
+      "name": "TakeScreenshot",
+      "description": "Takes a screenshot of current screen (filename extension defines format)",
+      "return": "void",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "SetConfigFlags",
+      "description": "Setup init configuration flags (view FLAGS)",
+      "return": "void",
+      "params": [
+        {
+          "type": "unsigned int",
+          "name": "flags"
+        }
+      ]
+    },
+    {
+      "name": "TraceLog",
+      "description": "Show trace log messages (LOG_DEBUG, LOG_INFO, LOG_WARNING, LOG_ERROR)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "logLevel"
+        },
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "name": "SetTraceLogLevel",
+      "description": "Set the current threshold (minimum) log level",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "logLevel"
+        }
+      ]
+    },
+    {
+      "name": "MemAlloc",
+      "description": "Internal memory allocator",
+      "return": "void *",
+      "params": [
+        {
+          "type": "int",
+          "name": "size"
+        }
+      ]
+    },
+    {
+      "name": "MemRealloc",
+      "description": "Internal memory reallocator",
+      "return": "void *",
+      "params": [
+        {
+          "type": "void *",
+          "name": "ptr"
+        },
+        {
+          "type": "int",
+          "name": "size"
+        }
+      ]
+    },
+    {
+      "name": "MemFree",
+      "description": "Internal memory free",
+      "return": "void",
+      "params": [
+        {
+          "type": "void *",
+          "name": "ptr"
+        }
+      ]
+    },
+    {
+      "name": "SetTraceLogCallback",
+      "description": "Set custom trace log",
+      "return": "void",
+      "params": [
+        {
+          "type": "TraceLogCallback",
+          "name": "callback"
+        }
+      ]
+    },
+    {
+      "name": "SetLoadFileDataCallback",
+      "description": "Set custom file binary data loader",
+      "return": "void",
+      "params": [
+        {
+          "type": "LoadFileDataCallback",
+          "name": "callback"
+        }
+      ]
+    },
+    {
+      "name": "SetSaveFileDataCallback",
+      "description": "Set custom file binary data saver",
+      "return": "void",
+      "params": [
+        {
+          "type": "SaveFileDataCallback",
+          "name": "callback"
+        }
+      ]
+    },
+    {
+      "name": "SetLoadFileTextCallback",
+      "description": "Set custom file text data loader",
+      "return": "void",
+      "params": [
+        {
+          "type": "LoadFileTextCallback",
+          "name": "callback"
+        }
+      ]
+    },
+    {
+      "name": "SetSaveFileTextCallback",
+      "description": "Set custom file text data saver",
+      "return": "void",
+      "params": [
+        {
+          "type": "SaveFileTextCallback",
+          "name": "callback"
+        }
+      ]
+    },
+    {
+      "name": "LoadFileData",
+      "description": "Load file data as byte array (read)",
+      "return": "unsigned char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        },
+        {
+          "type": "unsigned int *",
+          "name": "bytesRead"
+        }
+      ]
+    },
+    {
+      "name": "UnloadFileData",
+      "description": "Unload file data allocated by LoadFileData()",
+      "return": "void",
+      "params": [
+        {
+          "type": "unsigned char *",
+          "name": "data"
+        }
+      ]
+    },
+    {
+      "name": "SaveFileData",
+      "description": "Save data to file from byte array (write), returns true on success",
+      "return": "bool",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        },
+        {
+          "type": "void *",
+          "name": "data"
+        },
+        {
+          "type": "unsigned int",
+          "name": "bytesToWrite"
+        }
+      ]
+    },
+    {
+      "name": "LoadFileText",
+      "description": "Load text data from file (read), returns a ' 0' terminated string",
+      "return": "char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "UnloadFileText",
+      "description": "Unload file text data allocated by LoadFileText()",
+      "return": "void",
+      "params": [
+        {
+          "type": "unsigned char *",
+          "name": "text"
+        }
+      ]
+    },
+    {
+      "name": "SaveFileText",
+      "description": "Save text data to file (write), string must be ' 0' terminated, returns true on success",
+      "return": "bool",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        },
+        {
+          "type": "char *",
+          "name": "text"
+        }
+      ]
+    },
+    {
+      "name": "FileExists",
+      "description": "Check if file exists",
+      "return": "bool",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "DirectoryExists",
+      "description": "Check if a directory path exists",
+      "return": "bool",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "dirPath"
+        }
+      ]
+    },
+    {
+      "name": "IsFileExtension",
+      "description": "Check file extension (including point: .png, .wav)",
+      "return": "bool",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        },
+        {
+          "type": "const char *",
+          "name": "ext"
+        }
+      ]
+    },
+    {
+      "name": "GetFileExtension",
+      "description": "Get pointer to extension for a filename string (includes dot: '.png')",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "GetFileName",
+      "description": "Get pointer to filename for a path string",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "filePath"
+        }
+      ]
+    },
+    {
+      "name": "GetFileNameWithoutExt",
+      "description": "Get filename string without extension (uses static string)",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "filePath"
+        }
+      ]
+    },
+    {
+      "name": "GetDirectoryPath",
+      "description": "Get full path for a given fileName with path (uses static string)",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "filePath"
+        }
+      ]
+    },
+    {
+      "name": "GetPrevDirectoryPath",
+      "description": "Get previous directory path for a given path (uses static string)",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "dirPath"
+        }
+      ]
+    },
+    {
+      "name": "GetWorkingDirectory",
+      "description": "Get current working directory (uses static string)",
+      "return": "const char *"
+    },
+    {
+      "name": "GetDirectoryFiles",
+      "description": "Get filenames in a directory path (memory should be freed)",
+      "return": "char **",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "dirPath"
+        },
+        {
+          "type": "int *",
+          "name": "count"
+        }
+      ]
+    },
+    {
+      "name": "ClearDirectoryFiles",
+      "description": "Clear directory files paths buffers (free memory)",
+      "return": "void"
+    },
+    {
+      "name": "ChangeDirectory",
+      "description": "Change working directory, return true on success",
+      "return": "bool",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "dir"
+        }
+      ]
+    },
+    {
+      "name": "IsFileDropped",
+      "description": "Check if a file has been dropped into window",
+      "return": "bool"
+    },
+    {
+      "name": "GetDroppedFiles",
+      "description": "Get dropped files names (memory should be freed)",
+      "return": "char **",
+      "params": [
+        {
+          "type": "int *",
+          "name": "count"
+        }
+      ]
+    },
+    {
+      "name": "ClearDroppedFiles",
+      "description": "Clear dropped files paths buffer (free memory)",
+      "return": "void"
+    },
+    {
+      "name": "GetFileModTime",
+      "description": "Get file modification time (last write time)",
+      "return": "long",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "CompressData",
+      "description": "Compress data (DEFLATE algorithm)",
+      "return": "unsigned char *",
+      "params": [
+        {
+          "type": "unsigned char *",
+          "name": "data"
+        },
+        {
+          "type": "int",
+          "name": "dataLength"
+        },
+        {
+          "type": "int *",
+          "name": "compDataLength"
+        }
+      ]
+    },
+    {
+      "name": "DecompressData",
+      "description": "Decompress data (DEFLATE algorithm)",
+      "return": "unsigned char *",
+      "params": [
+        {
+          "type": "unsigned char *",
+          "name": "compData"
+        },
+        {
+          "type": "int",
+          "name": "compDataLength"
+        },
+        {
+          "type": "int *",
+          "name": "dataLength"
+        }
+      ]
+    },
+    {
+      "name": "SaveStorageValue",
+      "description": "Save integer value to storage file (to defined position), returns true on success",
+      "return": "bool",
+      "params": [
+        {
+          "type": "unsigned int",
+          "name": "position"
+        },
+        {
+          "type": "int",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "name": "LoadStorageValue",
+      "description": "Load integer value from storage file (from defined position)",
+      "return": "int",
+      "params": [
+        {
+          "type": "unsigned int",
+          "name": "position"
+        }
+      ]
+    },
+    {
+      "name": "OpenURL",
+      "description": "Open URL with default system browser (if available)",
+      "return": "void",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "url"
+        }
+      ]
+    },
+    {
+      "name": "IsKeyPressed",
+      "description": "Detect if a key has been pressed once",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "key"
+        }
+      ]
+    },
+    {
+      "name": "IsKeyDown",
+      "description": "Detect if a key is being pressed",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "key"
+        }
+      ]
+    },
+    {
+      "name": "IsKeyReleased",
+      "description": "Detect if a key has been released once",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "key"
+        }
+      ]
+    },
+    {
+      "name": "IsKeyUp",
+      "description": "Detect if a key is NOT being pressed",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "key"
+        }
+      ]
+    },
+    {
+      "name": "SetExitKey",
+      "description": "Set a custom key to exit program (default is ESC)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "key"
+        }
+      ]
+    },
+    {
+      "name": "GetKeyPressed",
+      "description": "Get key pressed (keycode), call it multiple times for keys queued",
+      "return": "int"
+    },
+    {
+      "name": "GetCharPressed",
+      "description": "Get char pressed (unicode), call it multiple times for chars queued",
+      "return": "int"
+    },
+    {
+      "name": "IsGamepadAvailable",
+      "description": "Detect if a gamepad is available",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "gamepad"
+        }
+      ]
+    },
+    {
+      "name": "IsGamepadName",
+      "description": "Check gamepad name (if available)",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "gamepad"
+        },
+        {
+          "type": "const char *",
+          "name": "name"
+        }
+      ]
+    },
+    {
+      "name": "GetGamepadName",
+      "description": "Return gamepad internal name id",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "int",
+          "name": "gamepad"
+        }
+      ]
+    },
+    {
+      "name": "IsGamepadButtonPressed",
+      "description": "Detect if a gamepad button has been pressed once",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "gamepad"
+        },
+        {
+          "type": "int",
+          "name": "button"
+        }
+      ]
+    },
+    {
+      "name": "IsGamepadButtonDown",
+      "description": "Detect if a gamepad button is being pressed",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "gamepad"
+        },
+        {
+          "type": "int",
+          "name": "button"
+        }
+      ]
+    },
+    {
+      "name": "IsGamepadButtonReleased",
+      "description": "Detect if a gamepad button has been released once",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "gamepad"
+        },
+        {
+          "type": "int",
+          "name": "button"
+        }
+      ]
+    },
+    {
+      "name": "IsGamepadButtonUp",
+      "description": "Detect if a gamepad button is NOT being pressed",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "gamepad"
+        },
+        {
+          "type": "int",
+          "name": "button"
+        }
+      ]
+    },
+    {
+      "name": "GetGamepadButtonPressed",
+      "description": "Get the last gamepad button pressed",
+      "return": "int"
+    },
+    {
+      "name": "GetGamepadAxisCount",
+      "description": "Return gamepad axis count for a gamepad",
+      "return": "int",
+      "params": [
+        {
+          "type": "int",
+          "name": "gamepad"
+        }
+      ]
+    },
+    {
+      "name": "GetGamepadAxisMovement",
+      "description": "Return axis movement value for a gamepad axis",
+      "return": "float",
+      "params": [
+        {
+          "type": "int",
+          "name": "gamepad"
+        },
+        {
+          "type": "int",
+          "name": "axis"
+        }
+      ]
+    },
+    {
+      "name": "SetGamepadMappings",
+      "description": "Set internal gamepad mappings (SDL_GameControllerDB)",
+      "return": "int",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "mappings"
+        }
+      ]
+    },
+    {
+      "name": "IsMouseButtonPressed",
+      "description": "Detect if a mouse button has been pressed once",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "button"
+        }
+      ]
+    },
+    {
+      "name": "IsMouseButtonDown",
+      "description": "Detect if a mouse button is being pressed",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "button"
+        }
+      ]
+    },
+    {
+      "name": "IsMouseButtonReleased",
+      "description": "Detect if a mouse button has been released once",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "button"
+        }
+      ]
+    },
+    {
+      "name": "IsMouseButtonUp",
+      "description": "Detect if a mouse button is NOT being pressed",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "button"
+        }
+      ]
+    },
+    {
+      "name": "GetMouseX",
+      "description": "Returns mouse position X",
+      "return": "int"
+    },
+    {
+      "name": "GetMouseY",
+      "description": "Returns mouse position Y",
+      "return": "int"
+    },
+    {
+      "name": "GetMousePosition",
+      "description": "Returns mouse position XY",
+      "return": "Vector2"
+    },
+    {
+      "name": "SetMousePosition",
+      "description": "Set mouse position XY",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "x"
+        },
+        {
+          "type": "int",
+          "name": "y"
+        }
+      ]
+    },
+    {
+      "name": "SetMouseOffset",
+      "description": "Set mouse offset",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "offsetX"
+        },
+        {
+          "type": "int",
+          "name": "offsetY"
+        }
+      ]
+    },
+    {
+      "name": "SetMouseScale",
+      "description": "Set mouse scaling",
+      "return": "void",
+      "params": [
+        {
+          "type": "float",
+          "name": "scaleX"
+        },
+        {
+          "type": "float",
+          "name": "scaleY"
+        }
+      ]
+    },
+    {
+      "name": "GetMouseWheelMove",
+      "description": "Returns mouse wheel movement Y",
+      "return": "float"
+    },
+    {
+      "name": "SetMouseCursor",
+      "description": "Set mouse cursor",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "cursor"
+        }
+      ]
+    },
+    {
+      "name": "GetTouchX",
+      "description": "Returns touch position X for touch point 0 (relative to screen size)",
+      "return": "int"
+    },
+    {
+      "name": "GetTouchY",
+      "description": "Returns touch position Y for touch point 0 (relative to screen size)",
+      "return": "int"
+    },
+    {
+      "name": "GetTouchPosition",
+      "description": "Returns touch position XY for a touch point index (relative to screen size)",
+      "return": "Vector2",
+      "params": [
+        {
+          "type": "int",
+          "name": "index"
+        }
+      ]
+    },
+    {
+      "name": "SetGesturesEnabled",
+      "description": "Enable a set of gestures using flags",
+      "return": "void",
+      "params": [
+        {
+          "type": "unsigned int",
+          "name": "flags"
+        }
+      ]
+    },
+    {
+      "name": "IsGestureDetected",
+      "description": "Check if a gesture have been detected",
+      "return": "bool",
+      "params": [
+        {
+          "type": "int",
+          "name": "gesture"
+        }
+      ]
+    },
+    {
+      "name": "GetGestureDetected",
+      "description": "Get latest detected gesture",
+      "return": "int"
+    },
+    {
+      "name": "GetTouchPointsCount",
+      "description": "Get touch points count",
+      "return": "int"
+    },
+    {
+      "name": "GetGestureHoldDuration",
+      "description": "Get gesture hold time in milliseconds",
+      "return": "float"
+    },
+    {
+      "name": "GetGestureDragVector",
+      "description": "Get gesture drag vector",
+      "return": "Vector2"
+    },
+    {
+      "name": "GetGestureDragAngle",
+      "description": "Get gesture drag angle",
+      "return": "float"
+    },
+    {
+      "name": "GetGesturePinchVector",
+      "description": "Get gesture pinch delta",
+      "return": "Vector2"
+    },
+    {
+      "name": "GetGesturePinchAngle",
+      "description": "Get gesture pinch angle",
+      "return": "float"
+    },
+    {
+      "name": "SetCameraMode",
+      "description": "Set camera mode (multiple camera modes available)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Camera",
+          "name": "camera"
+        },
+        {
+          "type": "int",
+          "name": "mode"
+        }
+      ]
+    },
+    {
+      "name": "UpdateCamera",
+      "description": "Update camera position for selected mode",
+      "return": "void",
+      "params": [
+        {
+          "type": "Camera *",
+          "name": "camera"
+        }
+      ]
+    },
+    {
+      "name": "SetCameraPanControl",
+      "description": "Set camera pan key to combine with mouse movement (free camera)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "keyPan"
+        }
+      ]
+    },
+    {
+      "name": "SetCameraAltControl",
+      "description": "Set camera alt key to combine with mouse movement (free camera)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "keyAlt"
+        }
+      ]
+    },
+    {
+      "name": "SetCameraSmoothZoomControl",
+      "description": "Set camera smooth zoom key to combine with mouse (free camera)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "keySmoothZoom"
+        }
+      ]
+    },
+    {
+      "name": "SetCameraMoveControls",
+      "description": "Set camera move controls (1st person and 3rd person cameras)",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "keyFront"
+        },
+        {
+          "type": "int",
+          "name": "keyBack"
+        },
+        {
+          "type": "int",
+          "name": "keyRight"
+        },
+        {
+          "type": "int",
+          "name": "keyLeft"
+        },
+        {
+          "type": "int",
+          "name": "keyUp"
+        },
+        {
+          "type": "int",
+          "name": "keyDown"
+        }
+      ]
+    },
+    {
+      "name": "SetShapesTexture",
+      "description": "",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Rectangle",
+          "name": "source"
+        }
+      ]
+    },
+    {
+      "name": "DrawPixel",
+      "description": "Draw a pixel",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawPixelV",
+      "description": "Draw a pixel (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawLine",
+      "description": "Draw a line",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "startPosX"
+        },
+        {
+          "type": "int",
+          "name": "startPosY"
+        },
+        {
+          "type": "int",
+          "name": "endPosX"
+        },
+        {
+          "type": "int",
+          "name": "endPosY"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawLineV",
+      "description": "Draw a line (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "startPos"
+        },
+        {
+          "type": "Vector2",
+          "name": "endPos"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawLineEx",
+      "description": "Draw a line defining thickness",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "startPos"
+        },
+        {
+          "type": "Vector2",
+          "name": "endPos"
+        },
+        {
+          "type": "float",
+          "name": "thick"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawLineBezier",
+      "description": "Draw a line using cubic-bezier curves in-out",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "startPos"
+        },
+        {
+          "type": "Vector2",
+          "name": "endPos"
+        },
+        {
+          "type": "float",
+          "name": "thick"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawLineBezierQuad",
+      "description": "raw line using quadratic bezier curves with a control point",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "startPos"
+        },
+        {
+          "type": "Vector2",
+          "name": "endPos"
+        },
+        {
+          "type": "Vector2",
+          "name": "controlPos"
+        },
+        {
+          "type": "float",
+          "name": "thick"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawLineStrip",
+      "description": "Draw lines sequence",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2 *",
+          "name": "points"
+        },
+        {
+          "type": "int",
+          "name": "pointsCount"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCircle",
+      "description": "Draw a color-filled circle",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "centerX"
+        },
+        {
+          "type": "int",
+          "name": "centerY"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCircleSector",
+      "description": "Draw a piece of a circle",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "float",
+          "name": "startAngle"
+        },
+        {
+          "type": "float",
+          "name": "endAngle"
+        },
+        {
+          "type": "int",
+          "name": "segments"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCircleSectorLines",
+      "description": "Draw circle sector outline",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "float",
+          "name": "startAngle"
+        },
+        {
+          "type": "float",
+          "name": "endAngle"
+        },
+        {
+          "type": "int",
+          "name": "segments"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCircleGradient",
+      "description": "Draw a gradient-filled circle",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "centerX"
+        },
+        {
+          "type": "int",
+          "name": "centerY"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "Color",
+          "name": "color1"
+        },
+        {
+          "type": "Color",
+          "name": "color2"
+        }
+      ]
+    },
+    {
+      "name": "DrawCircleV",
+      "description": "Draw a color-filled circle (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCircleLines",
+      "description": "Draw circle outline",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "centerX"
+        },
+        {
+          "type": "int",
+          "name": "centerY"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawEllipse",
+      "description": "Draw ellipse",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "centerX"
+        },
+        {
+          "type": "int",
+          "name": "centerY"
+        },
+        {
+          "type": "float",
+          "name": "radiusH"
+        },
+        {
+          "type": "float",
+          "name": "radiusV"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawEllipseLines",
+      "description": "Draw ellipse outline",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "centerX"
+        },
+        {
+          "type": "int",
+          "name": "centerY"
+        },
+        {
+          "type": "float",
+          "name": "radiusH"
+        },
+        {
+          "type": "float",
+          "name": "radiusV"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRing",
+      "description": "Draw ring",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "innerRadius"
+        },
+        {
+          "type": "float",
+          "name": "outerRadius"
+        },
+        {
+          "type": "float",
+          "name": "startAngle"
+        },
+        {
+          "type": "float",
+          "name": "endAngle"
+        },
+        {
+          "type": "int",
+          "name": "segments"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRingLines",
+      "description": "Draw ring outline",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "innerRadius"
+        },
+        {
+          "type": "float",
+          "name": "outerRadius"
+        },
+        {
+          "type": "float",
+          "name": "startAngle"
+        },
+        {
+          "type": "float",
+          "name": "endAngle"
+        },
+        {
+          "type": "int",
+          "name": "segments"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectangle",
+      "description": "Draw a color-filled rectangle",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        },
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectangleV",
+      "description": "Draw a color-filled rectangle (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "Vector2",
+          "name": "size"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectangleRec",
+      "description": "Draw a color-filled rectangle",
+      "return": "void",
+      "params": [
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectanglePro",
+      "description": "Draw a color-filled rectangle with pro parameters",
+      "return": "void",
+      "params": [
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "Vector2",
+          "name": "origin"
+        },
+        {
+          "type": "float",
+          "name": "rotation"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectangleGradientV",
+      "description": "Draw a vertical-gradient-filled rectangle",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        },
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "Color",
+          "name": "color1"
+        },
+        {
+          "type": "Color",
+          "name": "color2"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectangleGradientH",
+      "description": "Draw a horizontal-gradient-filled rectangle",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        },
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "Color",
+          "name": "color1"
+        },
+        {
+          "type": "Color",
+          "name": "color2"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectangleGradientEx",
+      "description": "Draw a gradient-filled rectangle with custom vertex colors",
+      "return": "void",
+      "params": [
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "Color",
+          "name": "col1"
+        },
+        {
+          "type": "Color",
+          "name": "col2"
+        },
+        {
+          "type": "Color",
+          "name": "col3"
+        },
+        {
+          "type": "Color",
+          "name": "col4"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectangleLines",
+      "description": "Draw rectangle outline",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        },
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectangleLinesEx",
+      "description": "Draw rectangle outline with extended parameters",
+      "return": "void",
+      "params": [
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "int",
+          "name": "lineThick"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectangleRounded",
+      "description": "Draw rectangle with rounded edges",
+      "return": "void",
+      "params": [
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "float",
+          "name": "roundness"
+        },
+        {
+          "type": "int",
+          "name": "segments"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRectangleRoundedLines",
+      "description": "Draw rectangle with rounded edges outline",
+      "return": "void",
+      "params": [
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "float",
+          "name": "roundness"
+        },
+        {
+          "type": "int",
+          "name": "segments"
+        },
+        {
+          "type": "int",
+          "name": "lineThick"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawTriangle",
+      "description": "Draw a color-filled triangle (vertex in counter-clockwise order!)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "v1"
+        },
+        {
+          "type": "Vector2",
+          "name": "v2"
+        },
+        {
+          "type": "Vector2",
+          "name": "v3"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawTriangleLines",
+      "description": "Draw triangle outline (vertex in counter-clockwise order!)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "v1"
+        },
+        {
+          "type": "Vector2",
+          "name": "v2"
+        },
+        {
+          "type": "Vector2",
+          "name": "v3"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawTriangleFan",
+      "description": "Draw a triangle fan defined by points (first vertex is the center)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2 *",
+          "name": "points"
+        },
+        {
+          "type": "int",
+          "name": "pointsCount"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawTriangleStrip",
+      "description": "Draw a triangle strip defined by points",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2 *",
+          "name": "points"
+        },
+        {
+          "type": "int",
+          "name": "pointsCount"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawPoly",
+      "description": "Draw a regular polygon (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "int",
+          "name": "sides"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "float",
+          "name": "rotation"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawPolyLines",
+      "description": "Draw a polygon outline of n sides",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "int",
+          "name": "sides"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "float",
+          "name": "rotation"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionRecs",
+      "description": "Check collision between two rectangles",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Rectangle",
+          "name": "rec1"
+        },
+        {
+          "type": "Rectangle",
+          "name": "rec2"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionCircles",
+      "description": "Check collision between two circles",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "center1"
+        },
+        {
+          "type": "float",
+          "name": "radius1"
+        },
+        {
+          "type": "Vector2",
+          "name": "center2"
+        },
+        {
+          "type": "float",
+          "name": "radius2"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionCircleRec",
+      "description": "Check collision between circle and rectangle",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionPointRec",
+      "description": "Check if point is inside rectangle",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "point"
+        },
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionPointCircle",
+      "description": "Check if point is inside circle",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "point"
+        },
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionPointTriangle",
+      "description": "Check if point is inside a triangle",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "point"
+        },
+        {
+          "type": "Vector2",
+          "name": "p1"
+        },
+        {
+          "type": "Vector2",
+          "name": "p2"
+        },
+        {
+          "type": "Vector2",
+          "name": "p3"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionLines",
+      "description": "Check the collision between two lines defined by two points each, returns collision point by reference",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Vector2",
+          "name": "startPos1"
+        },
+        {
+          "type": "Vector2",
+          "name": "endPos1"
+        },
+        {
+          "type": "Vector2",
+          "name": "startPos2"
+        },
+        {
+          "type": "Vector2",
+          "name": "endPos2"
+        },
+        {
+          "type": "Vector2 *",
+          "name": "collisionPoint"
+        }
+      ]
+    },
+    {
+      "name": "GetCollisionRec",
+      "description": "Get collision rectangle for two rectangles collision",
+      "return": "Rectangle",
+      "params": [
+        {
+          "type": "Rectangle",
+          "name": "rec1"
+        },
+        {
+          "type": "Rectangle",
+          "name": "rec2"
+        }
+      ]
+    },
+    {
+      "name": "LoadImage",
+      "description": "Load image from file into CPU memory (RAM)",
+      "return": "Image",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "LoadImageRaw",
+      "description": "Load image from RAW file data",
+      "return": "Image",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        },
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "int",
+          "name": "format"
+        },
+        {
+          "type": "int",
+          "name": "headerSize"
+        }
+      ]
+    },
+    {
+      "name": "LoadImageAnim",
+      "description": "Load image sequence from file (frames appended to image.data)",
+      "return": "Image",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        },
+        {
+          "type": "int *",
+          "name": "frames"
+        }
+      ]
+    },
+    {
+      "name": "LoadImageFromMemory",
+      "description": "Load image from memory buffer, fileType refers to extension: i.e. '.png'",
+      "return": "Image",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileType"
+        },
+        {
+          "type": "const unsigned char *",
+          "name": "fileData"
+        },
+        {
+          "type": "int",
+          "name": "dataSize"
+        }
+      ]
+    },
+    {
+      "name": "UnloadImage",
+      "description": "Unload image from CPU memory (RAM)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "ExportImage",
+      "description": "Export image data to file, returns true on success",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        },
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "ExportImageAsCode",
+      "description": "Export image as code file defining an array of bytes, returns true on success",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        },
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "GenImageColor",
+      "description": "Generate image: plain color",
+      "return": "Image",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "GenImageGradientV",
+      "description": "Generate image: vertical gradient",
+      "return": "Image",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "Color",
+          "name": "top"
+        },
+        {
+          "type": "Color",
+          "name": "bottom"
+        }
+      ]
+    },
+    {
+      "name": "GenImageGradientH",
+      "description": "Generate image: horizontal gradient",
+      "return": "Image",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "Color",
+          "name": "left"
+        },
+        {
+          "type": "Color",
+          "name": "right"
+        }
+      ]
+    },
+    {
+      "name": "GenImageGradientRadial",
+      "description": "Generate image: radial gradient",
+      "return": "Image",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "float",
+          "name": "density"
+        },
+        {
+          "type": "Color",
+          "name": "inner"
+        },
+        {
+          "type": "Color",
+          "name": "outer"
+        }
+      ]
+    },
+    {
+      "name": "GenImageChecked",
+      "description": "Generate image: checked",
+      "return": "Image",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "int",
+          "name": "checksX"
+        },
+        {
+          "type": "int",
+          "name": "checksY"
+        },
+        {
+          "type": "Color",
+          "name": "col1"
+        },
+        {
+          "type": "Color",
+          "name": "col2"
+        }
+      ]
+    },
+    {
+      "name": "GenImageWhiteNoise",
+      "description": "Generate image: white noise",
+      "return": "Image",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "float",
+          "name": "factor"
+        }
+      ]
+    },
+    {
+      "name": "GenImagePerlinNoise",
+      "description": "Generate image: perlin noise",
+      "return": "Image",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "int",
+          "name": "offsetX"
+        },
+        {
+          "type": "int",
+          "name": "offsetY"
+        },
+        {
+          "type": "float",
+          "name": "scale"
+        }
+      ]
+    },
+    {
+      "name": "GenImageCellular",
+      "description": "Generate image: cellular algorithm. Bigger tileSize means bigger cells",
+      "return": "Image",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "int",
+          "name": "tileSize"
+        }
+      ]
+    },
+    {
+      "name": "ImageCopy",
+      "description": "Create an image duplicate (useful for transformations)",
+      "return": "Image",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "ImageFromImage",
+      "description": "Create an image from another image piece",
+      "return": "Image",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        },
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        }
+      ]
+    },
+    {
+      "name": "ImageText",
+      "description": "Create an image from text (default font)",
+      "return": "Image",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "int",
+          "name": "fontSize"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageTextEx",
+      "description": "Create an image from text (custom sprite font)",
+      "return": "Image",
+      "params": [
+        {
+          "type": "Font",
+          "name": "font"
+        },
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "float",
+          "name": "fontSize"
+        },
+        {
+          "type": "float",
+          "name": "spacing"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "ImageFormat",
+      "description": "Convert image data to desired format",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "int",
+          "name": "newFormat"
+        }
+      ]
+    },
+    {
+      "name": "ImageToPOT",
+      "description": "Convert image to POT (power-of-two)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "Color",
+          "name": "fill"
+        }
+      ]
+    },
+    {
+      "name": "ImageCrop",
+      "description": "Crop an image to a defined rectangle",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "Rectangle",
+          "name": "crop"
+        }
+      ]
+    },
+    {
+      "name": "ImageAlphaCrop",
+      "description": "Crop image depending on alpha value",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "float",
+          "name": "threshold"
+        }
+      ]
+    },
+    {
+      "name": "ImageAlphaClear",
+      "description": "Clear alpha channel to desired color",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        },
+        {
+          "type": "float",
+          "name": "threshold"
+        }
+      ]
+    },
+    {
+      "name": "ImageAlphaMask",
+      "description": "Apply alpha mask to image",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "Image",
+          "name": "alphaMask"
+        }
+      ]
+    },
+    {
+      "name": "ImageAlphaPremultiply",
+      "description": "Premultiply alpha channel",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "ImageResize",
+      "description": "Resize image (Bicubic scaling algorithm)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "int",
+          "name": "newWidth"
+        },
+        {
+          "type": "int",
+          "name": "newHeight"
+        }
+      ]
+    },
+    {
+      "name": "ImageResizeNN",
+      "description": "Resize image (Nearest-Neighbor scaling algorithm)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "int",
+          "name": "newWidth"
+        },
+        {
+          "type": "int",
+          "name": "newHeight"
+        }
+      ]
+    },
+    {
+      "name": "ImageResizeCanvas",
+      "description": "Resize canvas and fill with color",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "int",
+          "name": "newWidth"
+        },
+        {
+          "type": "int",
+          "name": "newHeight"
+        },
+        {
+          "type": "int",
+          "name": "offsetX"
+        },
+        {
+          "type": "int",
+          "name": "offsetY"
+        },
+        {
+          "type": "Color",
+          "name": "fill"
+        }
+      ]
+    },
+    {
+      "name": "ImageMipmaps",
+      "description": "Generate all mipmap levels for a provided image",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "ImageDither",
+      "description": "Dither image data to 16bpp or lower (Floyd-Steinberg dithering)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "int",
+          "name": "rBpp"
+        },
+        {
+          "type": "int",
+          "name": "gBpp"
+        },
+        {
+          "type": "int",
+          "name": "bBpp"
+        },
+        {
+          "type": "int",
+          "name": "aBpp"
+        }
+      ]
+    },
+    {
+      "name": "ImageFlipVertical",
+      "description": "Flip image vertically",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "ImageFlipHorizontal",
+      "description": "Flip image horizontally",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "ImageRotateCW",
+      "description": "Rotate image clockwise 90deg",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "ImageRotateCCW",
+      "description": "Rotate image counter-clockwise 90deg",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "ImageColorTint",
+      "description": "Modify image color: tint",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageColorInvert",
+      "description": "Modify image color: invert",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "ImageColorGrayscale",
+      "description": "Modify image color: grayscale",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "ImageColorContrast",
+      "description": "Modify image color: contrast (-100 to 100)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "float",
+          "name": "contrast"
+        }
+      ]
+    },
+    {
+      "name": "ImageColorBrightness",
+      "description": "Modify image color: brightness (-255 to 255)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "int",
+          "name": "brightness"
+        }
+      ]
+    },
+    {
+      "name": "ImageColorReplace",
+      "description": "Modify image color: replace color",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "image"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        },
+        {
+          "type": "Color",
+          "name": "replace"
+        }
+      ]
+    },
+    {
+      "name": "LoadImageColors",
+      "description": "Load color data from image as a Color array (RGBA - 32bit)",
+      "return": "Color *",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "LoadImagePalette",
+      "description": "Load colors palette from image as a Color array (RGBA - 32bit)",
+      "return": "Color *",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        },
+        {
+          "type": "int",
+          "name": "maxPaletteSize"
+        },
+        {
+          "type": "int *",
+          "name": "colorsCount"
+        }
+      ]
+    },
+    {
+      "name": "UnloadImageColors",
+      "description": "Unload color data loaded with LoadImageColors()",
+      "return": "void",
+      "params": [
+        {
+          "type": "Color *",
+          "name": "colors"
+        }
+      ]
+    },
+    {
+      "name": "UnloadImagePalette",
+      "description": "Unload colors palette loaded with LoadImagePalette()",
+      "return": "void",
+      "params": [
+        {
+          "type": "Color *",
+          "name": "colors"
+        }
+      ]
+    },
+    {
+      "name": "GetImageAlphaBorder",
+      "description": "Get image alpha border rectangle",
+      "return": "Rectangle",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        },
+        {
+          "type": "float",
+          "name": "threshold"
+        }
+      ]
+    },
+    {
+      "name": "ImageClearBackground",
+      "description": "Clear image background with given color",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawPixel",
+      "description": "Draw pixel within an image",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawPixelV",
+      "description": "Draw pixel within an image (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawLine",
+      "description": "Draw line within an image",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "int",
+          "name": "startPosX"
+        },
+        {
+          "type": "int",
+          "name": "startPosY"
+        },
+        {
+          "type": "int",
+          "name": "endPosX"
+        },
+        {
+          "type": "int",
+          "name": "endPosY"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawLineV",
+      "description": "Draw line within an image (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "Vector2",
+          "name": "start"
+        },
+        {
+          "type": "Vector2",
+          "name": "end"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawCircle",
+      "description": "Draw circle within an image",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "int",
+          "name": "centerX"
+        },
+        {
+          "type": "int",
+          "name": "centerY"
+        },
+        {
+          "type": "int",
+          "name": "radius"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawCircleV",
+      "description": "Draw circle within an image (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "int",
+          "name": "radius"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawRectangle",
+      "description": "Draw rectangle within an image",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        },
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawRectangleV",
+      "description": "Draw rectangle within an image (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "Vector2",
+          "name": "size"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawRectangleRec",
+      "description": "Draw rectangle within an image",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawRectangleLines",
+      "description": "Draw rectangle lines within an image",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "int",
+          "name": "thick"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDraw",
+      "description": "Draw a source image within a destination image (tint applied to source)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "Image",
+          "name": "src"
+        },
+        {
+          "type": "Rectangle",
+          "name": "srcRec"
+        },
+        {
+          "type": "Rectangle",
+          "name": "dstRec"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawText",
+      "description": "Draw text (using default font) within an image (destination)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        },
+        {
+          "type": "int",
+          "name": "fontSize"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ImageDrawTextEx",
+      "description": "Draw text (custom sprite font) within an image (destination)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Image *",
+          "name": "dst"
+        },
+        {
+          "type": "Font",
+          "name": "font"
+        },
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "fontSize"
+        },
+        {
+          "type": "float",
+          "name": "spacing"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "LoadTexture",
+      "description": "Load texture from file into GPU memory (VRAM)",
+      "return": "Texture2D",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "LoadTextureFromImage",
+      "description": "Load texture from image data",
+      "return": "Texture2D",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "name": "LoadTextureCubemap",
+      "description": "Load cubemap from image, multiple image cubemap layouts supported",
+      "return": "TextureCubemap",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        },
+        {
+          "type": "int",
+          "name": "layout"
+        }
+      ]
+    },
+    {
+      "name": "LoadRenderTexture",
+      "description": "Load texture for rendering (framebuffer)",
+      "return": "RenderTexture2D",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        }
+      ]
+    },
+    {
+      "name": "UnloadTexture",
+      "description": "Unload texture from GPU memory (VRAM)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        }
+      ]
+    },
+    {
+      "name": "UnloadRenderTexture",
+      "description": "Unload render texture from GPU memory (VRAM)",
+      "return": "void",
+      "params": [
+        {
+          "type": "RenderTexture2D",
+          "name": "target"
+        }
+      ]
+    },
+    {
+      "name": "UpdateTexture",
+      "description": "Update GPU texture with new data",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "const void *",
+          "name": "pixels"
+        }
+      ]
+    },
+    {
+      "name": "UpdateTextureRec",
+      "description": "Update GPU texture rectangle with new data",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "const void *",
+          "name": "pixels"
+        }
+      ]
+    },
+    {
+      "name": "GetTextureData",
+      "description": "Get pixel data from GPU texture and return an Image",
+      "return": "Image",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        }
+      ]
+    },
+    {
+      "name": "GetScreenData",
+      "description": "Get pixel data from screen buffer and return an Image (screenshot)",
+      "return": "Image"
+    },
+    {
+      "name": "GenTextureMipmaps",
+      "description": "Generate GPU mipmaps for a texture",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D *",
+          "name": "texture"
+        }
+      ]
+    },
+    {
+      "name": "SetTextureFilter",
+      "description": "Set texture scaling filter mode",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "int",
+          "name": "filter"
+        }
+      ]
+    },
+    {
+      "name": "SetTextureWrap",
+      "description": "Set texture wrapping mode",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "int",
+          "name": "wrap"
+        }
+      ]
+    },
+    {
+      "name": "DrawTexture",
+      "description": "Draw a Texture2D",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTextureV",
+      "description": "Draw a Texture2D with position defined as Vector2",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTextureEx",
+      "description": "Draw a Texture2D with extended parameters",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "rotation"
+        },
+        {
+          "type": "float",
+          "name": "scale"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTextureRec",
+      "description": "Draw a part of a texture defined by a rectangle",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Rectangle",
+          "name": "source"
+        },
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTextureQuad",
+      "description": "Draw texture quad with tiling and offset parameters",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Vector2",
+          "name": "tiling"
+        },
+        {
+          "type": "Vector2",
+          "name": "offset"
+        },
+        {
+          "type": "Rectangle",
+          "name": "quad"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTextureTiled",
+      "description": "Draw part of a texture (defined by a rectangle) with rotation and scale tiled into dest.",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Rectangle",
+          "name": "source"
+        },
+        {
+          "type": "Rectangle",
+          "name": "dest"
+        },
+        {
+          "type": "Vector2",
+          "name": "origin"
+        },
+        {
+          "type": "float",
+          "name": "rotation"
+        },
+        {
+          "type": "float",
+          "name": "scale"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTexturePro",
+      "description": "Draw a part of a texture defined by a rectangle with 'pro' parameters",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Rectangle",
+          "name": "source"
+        },
+        {
+          "type": "Rectangle",
+          "name": "dest"
+        },
+        {
+          "type": "Vector2",
+          "name": "origin"
+        },
+        {
+          "type": "float",
+          "name": "rotation"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTextureNPatch",
+      "description": "Draws a texture (or part of it) that stretches or shrinks nicely",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "NPatchInfo",
+          "name": "nPatchInfo"
+        },
+        {
+          "type": "Rectangle",
+          "name": "dest"
+        },
+        {
+          "type": "Vector2",
+          "name": "origin"
+        },
+        {
+          "type": "float",
+          "name": "rotation"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTexturePoly",
+      "description": "Draw a textured polygon",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Vector2",
+          "name": "center"
+        },
+        {
+          "type": "Vector2 *",
+          "name": "points"
+        },
+        {
+          "type": "Vector2 *",
+          "name": "texcoords"
+        },
+        {
+          "type": "int",
+          "name": "pointsCount"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "Fade",
+      "description": "Returns color with alpha applied, alpha goes from 0.0f to 1.0f",
+      "return": "Color",
+      "params": [
+        {
+          "type": "Color",
+          "name": "color"
+        },
+        {
+          "type": "float",
+          "name": "alpha"
+        }
+      ]
+    },
+    {
+      "name": "ColorToInt",
+      "description": "Returns hexadecimal value for a Color",
+      "return": "int",
+      "params": [
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ColorNormalize",
+      "description": "Returns Color normalized as float [0..1]",
+      "return": "Vector4",
+      "params": [
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ColorFromNormalized",
+      "description": "Returns Color from normalized values [0..1]",
+      "return": "Color",
+      "params": [
+        {
+          "type": "Vector4",
+          "name": "normalized"
+        }
+      ]
+    },
+    {
+      "name": "ColorToHSV",
+      "description": "Returns HSV values for a Color, hue [0..360], saturation/value [0..1]",
+      "return": "Vector3",
+      "params": [
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "ColorFromHSV",
+      "description": "Returns a Color from HSV values, hue [0..360], saturation/value [0..1]",
+      "return": "Color",
+      "params": [
+        {
+          "type": "float",
+          "name": "hue"
+        },
+        {
+          "type": "float",
+          "name": "saturation"
+        },
+        {
+          "type": "float",
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "name": "ColorAlpha",
+      "description": "Returns color with alpha applied, alpha goes from 0.0f to 1.0f",
+      "return": "Color",
+      "params": [
+        {
+          "type": "Color",
+          "name": "color"
+        },
+        {
+          "type": "float",
+          "name": "alpha"
+        }
+      ]
+    },
+    {
+      "name": "ColorAlphaBlend",
+      "description": "Returns src alpha-blended into dst color with tint",
+      "return": "Color",
+      "params": [
+        {
+          "type": "Color",
+          "name": "dst"
+        },
+        {
+          "type": "Color",
+          "name": "src"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "GetColor",
+      "description": "Get Color structure from hexadecimal value",
+      "return": "Color",
+      "params": [
+        {
+          "type": "int",
+          "name": "hexValue"
+        }
+      ]
+    },
+    {
+      "name": "GetPixelColor",
+      "description": "Get Color from a source pixel pointer of certain format",
+      "return": "Color",
+      "params": [
+        {
+          "type": "void *",
+          "name": "srcPtr"
+        },
+        {
+          "type": "int",
+          "name": "format"
+        }
+      ]
+    },
+    {
+      "name": "SetPixelColor",
+      "description": "Set color formatted into destination pixel pointer",
+      "return": "void",
+      "params": [
+        {
+          "type": "void *",
+          "name": "dstPtr"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        },
+        {
+          "type": "int",
+          "name": "format"
+        }
+      ]
+    },
+    {
+      "name": "GetPixelDataSize",
+      "description": "Get pixel data size in bytes for certain format",
+      "return": "int",
+      "params": [
+        {
+          "type": "int",
+          "name": "width"
+        },
+        {
+          "type": "int",
+          "name": "height"
+        },
+        {
+          "type": "int",
+          "name": "format"
+        }
+      ]
+    },
+    {
+      "name": "GetFontDefault",
+      "description": "Get the default Font",
+      "return": "Font"
+    },
+    {
+      "name": "LoadFont",
+      "description": "Load font from file into GPU memory (VRAM)",
+      "return": "Font",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "LoadFontEx",
+      "description": "Load font from file with extended parameters",
+      "return": "Font",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        },
+        {
+          "type": "int",
+          "name": "fontSize"
+        },
+        {
+          "type": "int *",
+          "name": "fontChars"
+        },
+        {
+          "type": "int",
+          "name": "charsCount"
+        }
+      ]
+    },
+    {
+      "name": "LoadFontFromImage",
+      "description": "Load font from Image (XNA style)",
+      "return": "Font",
+      "params": [
+        {
+          "type": "Image",
+          "name": "image"
+        },
+        {
+          "type": "Color",
+          "name": "key"
+        },
+        {
+          "type": "int",
+          "name": "firstChar"
+        }
+      ]
+    },
+    {
+      "name": "LoadFontFromMemory",
+      "description": "Load font from memory buffer, fileType refers to extension: i.e. '.ttf'",
+      "return": "Font",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileType"
+        },
+        {
+          "type": "const unsigned char *",
+          "name": "fileData"
+        },
+        {
+          "type": "int",
+          "name": "dataSize"
+        },
+        {
+          "type": "int",
+          "name": "fontSize"
+        },
+        {
+          "type": "int *",
+          "name": "fontChars"
+        },
+        {
+          "type": "int",
+          "name": "charsCount"
+        }
+      ]
+    },
+    {
+      "name": "LoadFontData",
+      "description": "Load font data for further use",
+      "return": "CharInfo *",
+      "params": [
+        {
+          "type": "const unsigned char *",
+          "name": "fileData"
+        },
+        {
+          "type": "int",
+          "name": "dataSize"
+        },
+        {
+          "type": "int",
+          "name": "fontSize"
+        },
+        {
+          "type": "int *",
+          "name": "fontChars"
+        },
+        {
+          "type": "int",
+          "name": "charsCount"
+        },
+        {
+          "type": "int",
+          "name": "type"
+        }
+      ]
+    },
+    {
+      "name": "GenImageFontAtlas",
+      "description": "Generate image font atlas using chars info",
+      "return": "Image",
+      "params": [
+        {
+          "type": "const CharInfo *",
+          "name": "chars"
+        },
+        {
+          "type": "Rectangle **",
+          "name": "recs"
+        },
+        {
+          "type": "int",
+          "name": "charsCount"
+        },
+        {
+          "type": "int",
+          "name": "fontSize"
+        },
+        {
+          "type": "int",
+          "name": "padding"
+        },
+        {
+          "type": "int",
+          "name": "packMethod"
+        }
+      ]
+    },
+    {
+      "name": "UnloadFontData",
+      "description": "Unload font chars info data (RAM)",
+      "return": "void",
+      "params": [
+        {
+          "type": "CharInfo *",
+          "name": "chars"
+        },
+        {
+          "type": "int",
+          "name": "charsCount"
+        }
+      ]
+    },
+    {
+      "name": "UnloadFont",
+      "description": "Unload Font from GPU memory (VRAM)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Font",
+          "name": "font"
+        }
+      ]
+    },
+    {
+      "name": "DrawFPS",
+      "description": "Draw current FPS",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        }
+      ]
+    },
+    {
+      "name": "DrawText",
+      "description": "Draw text (using default font)",
+      "return": "void",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "int",
+          "name": "posX"
+        },
+        {
+          "type": "int",
+          "name": "posY"
+        },
+        {
+          "type": "int",
+          "name": "fontSize"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawTextEx",
+      "description": "Draw text using font and additional parameters",
+      "return": "void",
+      "params": [
+        {
+          "type": "Font",
+          "name": "font"
+        },
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "fontSize"
+        },
+        {
+          "type": "float",
+          "name": "spacing"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTextRec",
+      "description": "Draw text using font inside rectangle limits",
+      "return": "void",
+      "params": [
+        {
+          "type": "Font",
+          "name": "font"
+        },
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "float",
+          "name": "fontSize"
+        },
+        {
+          "type": "float",
+          "name": "spacing"
+        },
+        {
+          "type": "bool",
+          "name": "wordWrap"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTextRecEx",
+      "description": "",
+      "return": "void",
+      "params": [
+        {
+          "type": "Font",
+          "name": "font"
+        },
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "Rectangle",
+          "name": "rec"
+        },
+        {
+          "type": "float",
+          "name": "fontSize"
+        },
+        {
+          "type": "float",
+          "name": "spacing"
+        },
+        {
+          "type": "bool",
+          "name": "wordWrap"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawTextCodepoint",
+      "description": "Draw one character (codepoint)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Font",
+          "name": "font"
+        },
+        {
+          "type": "int",
+          "name": "codepoint"
+        },
+        {
+          "type": "Vector2",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "fontSize"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "MeasureText",
+      "description": "Measure string width for default font",
+      "return": "int",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "int",
+          "name": "fontSize"
+        }
+      ]
+    },
+    {
+      "name": "MeasureTextEx",
+      "description": "Measure string size for Font",
+      "return": "Vector2",
+      "params": [
+        {
+          "type": "Font",
+          "name": "font"
+        },
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "float",
+          "name": "fontSize"
+        },
+        {
+          "type": "float",
+          "name": "spacing"
+        }
+      ]
+    },
+    {
+      "name": "GetGlyphIndex",
+      "description": "Get index position for a unicode character on font",
+      "return": "int",
+      "params": [
+        {
+          "type": "Font",
+          "name": "font"
+        },
+        {
+          "type": "int",
+          "name": "codepoint"
+        }
+      ]
+    },
+    {
+      "name": "TextCopy",
+      "description": "Copy one string to another, returns bytes copied",
+      "return": "int",
+      "params": [
+        {
+          "type": "char *",
+          "name": "dst"
+        },
+        {
+          "type": "const char *",
+          "name": "src"
+        }
+      ]
+    },
+    {
+      "name": "TextIsEqual",
+      "description": "Check if two text string are equal",
+      "return": "bool",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text1"
+        },
+        {
+          "type": "const char *",
+          "name": "text2"
+        }
+      ]
+    },
+    {
+      "name": "TextLength",
+      "description": "Get text length, checks for ' 0' ending",
+      "return": "unsigned int",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        }
+      ]
+    },
+    {
+      "name": "TextFormat",
+      "description": "Text formatting with variables (sprintf style)",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "name": "TextSubtext",
+      "description": "Get a piece of a text string",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "int",
+          "name": "position"
+        },
+        {
+          "type": "int",
+          "name": "length"
+        }
+      ]
+    },
+    {
+      "name": "TextReplace",
+      "description": "Replace text string (memory must be freed!)",
+      "return": "char *",
+      "params": [
+        {
+          "type": "char *",
+          "name": "text"
+        },
+        {
+          "type": "const char *",
+          "name": "replace"
+        },
+        {
+          "type": "const char *",
+          "name": "by"
+        }
+      ]
+    },
+    {
+      "name": "TextInsert",
+      "description": "Insert text in a position (memory must be freed!)",
+      "return": "char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "const char *",
+          "name": "insert"
+        },
+        {
+          "type": "int",
+          "name": "position"
+        }
+      ]
+    },
+    {
+      "name": "TextJoin",
+      "description": "Join text strings with delimiter",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char **",
+          "name": "textList"
+        },
+        {
+          "type": "int",
+          "name": "count"
+        },
+        {
+          "type": "const char *",
+          "name": "delimiter"
+        }
+      ]
+    },
+    {
+      "name": "TextSplit",
+      "description": "Split text into multiple strings",
+      "return": "const char **",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "char",
+          "name": "delimiter"
+        },
+        {
+          "type": "int *",
+          "name": "count"
+        }
+      ]
+    },
+    {
+      "name": "TextAppend",
+      "description": "Append text at specific position and move cursor!",
+      "return": "void",
+      "params": [
+        {
+          "type": "char *",
+          "name": "text"
+        },
+        {
+          "type": "const char *",
+          "name": "append"
+        },
+        {
+          "type": "int *",
+          "name": "position"
+        }
+      ]
+    },
+    {
+      "name": "TextFindIndex",
+      "description": "Find first text occurrence within a string",
+      "return": "int",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "const char *",
+          "name": "find"
+        }
+      ]
+    },
+    {
+      "name": "TextToUpper",
+      "description": "Get upper case version of provided string",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        }
+      ]
+    },
+    {
+      "name": "TextToLower",
+      "description": "Get lower case version of provided string",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        }
+      ]
+    },
+    {
+      "name": "TextToPascal",
+      "description": "Get Pascal case notation version of provided string",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        }
+      ]
+    },
+    {
+      "name": "TextToInteger",
+      "description": "Get integer value from text (negative values not supported)",
+      "return": "int",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        }
+      ]
+    },
+    {
+      "name": "TextToUtf8",
+      "description": "Encode text codepoint into utf8 text (memory must be freed!)",
+      "return": "char *",
+      "params": [
+        {
+          "type": "int *",
+          "name": "codepoints"
+        },
+        {
+          "type": "int",
+          "name": "length"
+        }
+      ]
+    },
+    {
+      "name": "GetCodepoints",
+      "description": "Get all codepoints in a string, codepoints count returned by parameters",
+      "return": "int *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "int *",
+          "name": "count"
+        }
+      ]
+    },
+    {
+      "name": "GetCodepointsCount",
+      "description": "Get total number of characters (codepoints) in a UTF8 encoded string",
+      "return": "int",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        }
+      ]
+    },
+    {
+      "name": "GetNextCodepoint",
+      "description": "Returns next codepoint in a UTF8 encoded string; 0x3f('?') is returned on failure",
+      "return": "int",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "text"
+        },
+        {
+          "type": "int *",
+          "name": "bytesProcessed"
+        }
+      ]
+    },
+    {
+      "name": "CodepointToUtf8",
+      "description": "Encode codepoint into utf8 text (char array length returned as parameter)",
+      "return": "const char *",
+      "params": [
+        {
+          "type": "int",
+          "name": "codepoint"
+        },
+        {
+          "type": "int *",
+          "name": "byteLength"
+        }
+      ]
+    },
+    {
+      "name": "DrawLine3D",
+      "description": "Draw a line in 3D world space",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "startPos"
+        },
+        {
+          "type": "Vector3",
+          "name": "endPos"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawPoint3D",
+      "description": "Draw a point in 3D space, actually a small line",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCircle3D",
+      "description": "Draw a circle in 3D world space",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "Vector3",
+          "name": "rotationAxis"
+        },
+        {
+          "type": "float",
+          "name": "rotationAngle"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawTriangle3D",
+      "description": "Draw a color-filled triangle (vertex in counter-clockwise order!)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "v1"
+        },
+        {
+          "type": "Vector3",
+          "name": "v2"
+        },
+        {
+          "type": "Vector3",
+          "name": "v3"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawTriangleStrip3D",
+      "description": "Draw a triangle strip defined by points",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3 *",
+          "name": "points"
+        },
+        {
+          "type": "int",
+          "name": "pointsCount"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCube",
+      "description": "Draw cube",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "width"
+        },
+        {
+          "type": "float",
+          "name": "height"
+        },
+        {
+          "type": "float",
+          "name": "length"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCubeV",
+      "description": "Draw cube (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "Vector3",
+          "name": "size"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCubeWires",
+      "description": "Draw cube wires",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "width"
+        },
+        {
+          "type": "float",
+          "name": "height"
+        },
+        {
+          "type": "float",
+          "name": "length"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCubeWiresV",
+      "description": "Draw cube wires (Vector version)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "Vector3",
+          "name": "size"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCubeTexture",
+      "description": "Draw cube textured",
+      "return": "void",
+      "params": [
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "width"
+        },
+        {
+          "type": "float",
+          "name": "height"
+        },
+        {
+          "type": "float",
+          "name": "length"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawSphere",
+      "description": "Draw sphere",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "centerPos"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawSphereEx",
+      "description": "Draw sphere with extended parameters",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "centerPos"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "int",
+          "name": "rings"
+        },
+        {
+          "type": "int",
+          "name": "slices"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawSphereWires",
+      "description": "Draw sphere wires",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "centerPos"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "int",
+          "name": "rings"
+        },
+        {
+          "type": "int",
+          "name": "slices"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCylinder",
+      "description": "Draw a cylinder/cone",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "radiusTop"
+        },
+        {
+          "type": "float",
+          "name": "radiusBottom"
+        },
+        {
+          "type": "float",
+          "name": "height"
+        },
+        {
+          "type": "int",
+          "name": "slices"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawCylinderWires",
+      "description": "Draw a cylinder/cone wires",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "radiusTop"
+        },
+        {
+          "type": "float",
+          "name": "radiusBottom"
+        },
+        {
+          "type": "float",
+          "name": "height"
+        },
+        {
+          "type": "int",
+          "name": "slices"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawPlane",
+      "description": "Draw a plane XZ",
+      "return": "void",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "centerPos"
+        },
+        {
+          "type": "Vector2",
+          "name": "size"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawRay",
+      "description": "Draw a ray line",
+      "return": "void",
+      "params": [
+        {
+          "type": "Ray",
+          "name": "ray"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawGrid",
+      "description": "Draw a grid (centered at (0, 0, 0))",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "slices"
+        },
+        {
+          "type": "float",
+          "name": "spacing"
+        }
+      ]
+    },
+    {
+      "name": "LoadModel",
+      "description": "Load model from files (meshes and materials)",
+      "return": "Model",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "LoadModelFromMesh",
+      "description": "Load model from generated mesh (default material)",
+      "return": "Model",
+      "params": [
+        {
+          "type": "Mesh",
+          "name": "mesh"
+        }
+      ]
+    },
+    {
+      "name": "UnloadModel",
+      "description": "Unload model (including meshes) from memory (RAM and/or VRAM)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Model",
+          "name": "model"
+        }
+      ]
+    },
+    {
+      "name": "UnloadModelKeepMeshes",
+      "description": "Unload model (but not meshes) from memory (RAM and/or VRAM)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Model",
+          "name": "model"
+        }
+      ]
+    },
+    {
+      "name": "UploadMesh",
+      "description": "Upload mesh vertex data in GPU and provide VAO/VBO ids",
+      "return": "void",
+      "params": [
+        {
+          "type": "Mesh *",
+          "name": "mesh"
+        },
+        {
+          "type": "bool",
+          "name": "dynamic"
+        }
+      ]
+    },
+    {
+      "name": "UpdateMeshBuffer",
+      "description": "Update mesh vertex data in GPU for a specific buffer index",
+      "return": "void",
+      "params": [
+        {
+          "type": "Mesh",
+          "name": "mesh"
+        },
+        {
+          "type": "int",
+          "name": "index"
+        },
+        {
+          "type": "void *",
+          "name": "data"
+        },
+        {
+          "type": "int",
+          "name": "dataSize"
+        },
+        {
+          "type": "int",
+          "name": "offset"
+        }
+      ]
+    },
+    {
+      "name": "DrawMesh",
+      "description": "Draw a 3d mesh with material and transform",
+      "return": "void",
+      "params": [
+        {
+          "type": "Mesh",
+          "name": "mesh"
+        },
+        {
+          "type": "Material",
+          "name": "material"
+        },
+        {
+          "type": "Matrix",
+          "name": "transform"
+        }
+      ]
+    },
+    {
+      "name": "DrawMeshInstanced",
+      "description": "Draw multiple mesh instances with material and different transforms",
+      "return": "void",
+      "params": [
+        {
+          "type": "Mesh",
+          "name": "mesh"
+        },
+        {
+          "type": "Material",
+          "name": "material"
+        },
+        {
+          "type": "Matrix *",
+          "name": "transforms"
+        },
+        {
+          "type": "int",
+          "name": "instances"
+        }
+      ]
+    },
+    {
+      "name": "UnloadMesh",
+      "description": "Unload mesh data from CPU and GPU",
+      "return": "void",
+      "params": [
+        {
+          "type": "Mesh",
+          "name": "mesh"
+        }
+      ]
+    },
+    {
+      "name": "ExportMesh",
+      "description": "Export mesh data to file, returns true on success",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Mesh",
+          "name": "mesh"
+        },
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "LoadMaterials",
+      "description": "Load materials from model file",
+      "return": "Material *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        },
+        {
+          "type": "int *",
+          "name": "materialCount"
+        }
+      ]
+    },
+    {
+      "name": "LoadMaterialDefault",
+      "description": "Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)",
+      "return": "Material"
+    },
+    {
+      "name": "UnloadMaterial",
+      "description": "Unload material from GPU memory (VRAM)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Material",
+          "name": "material"
+        }
+      ]
+    },
+    {
+      "name": "SetMaterialTexture",
+      "description": "Set texture for a material map type (MATERIAL_MAP_DIFFUSE, MATERIAL_MAP_SPECULAR...)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Material *",
+          "name": "material"
+        },
+        {
+          "type": "int",
+          "name": "mapType"
+        },
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        }
+      ]
+    },
+    {
+      "name": "SetModelMeshMaterial",
+      "description": "Set material for a mesh",
+      "return": "void",
+      "params": [
+        {
+          "type": "Model *",
+          "name": "model"
+        },
+        {
+          "type": "int",
+          "name": "meshId"
+        },
+        {
+          "type": "int",
+          "name": "materialId"
+        }
+      ]
+    },
+    {
+      "name": "LoadModelAnimations",
+      "description": "Load model animations from file",
+      "return": "ModelAnimation *",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        },
+        {
+          "type": "int *",
+          "name": "animsCount"
+        }
+      ]
+    },
+    {
+      "name": "UpdateModelAnimation",
+      "description": "Update model animation pose",
+      "return": "void",
+      "params": [
+        {
+          "type": "Model",
+          "name": "model"
+        },
+        {
+          "type": "ModelAnimation",
+          "name": "anim"
+        },
+        {
+          "type": "int",
+          "name": "frame"
+        }
+      ]
+    },
+    {
+      "name": "UnloadModelAnimation",
+      "description": "Unload animation data",
+      "return": "void",
+      "params": [
+        {
+          "type": "ModelAnimation",
+          "name": "anim"
+        }
+      ]
+    },
+    {
+      "name": "UnloadModelAnimations",
+      "description": "Unload animation array data",
+      "return": "void",
+      "params": [
+        {
+          "type": "ModelAnimation*",
+          "name": "animations"
+        },
+        {
+          "type": "unsigned int",
+          "name": "count"
+        }
+      ]
+    },
+    {
+      "name": "IsModelAnimationValid",
+      "description": "Check model animation skeleton match",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Model",
+          "name": "model"
+        },
+        {
+          "type": "ModelAnimation",
+          "name": "anim"
+        }
+      ]
+    },
+    {
+      "name": "GenMeshPoly",
+      "description": "Generate polygonal mesh",
+      "return": "Mesh",
+      "params": [
+        {
+          "type": "int",
+          "name": "sides"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        }
+      ]
+    },
+    {
+      "name": "GenMeshPlane",
+      "description": "Generate plane mesh (with subdivisions)",
+      "return": "Mesh",
+      "params": [
+        {
+          "type": "float",
+          "name": "width"
+        },
+        {
+          "type": "float",
+          "name": "length"
+        },
+        {
+          "type": "int",
+          "name": "resX"
+        },
+        {
+          "type": "int",
+          "name": "resZ"
+        }
+      ]
+    },
+    {
+      "name": "GenMeshCube",
+      "description": "Generate cuboid mesh",
+      "return": "Mesh",
+      "params": [
+        {
+          "type": "float",
+          "name": "width"
+        },
+        {
+          "type": "float",
+          "name": "height"
+        },
+        {
+          "type": "float",
+          "name": "length"
+        }
+      ]
+    },
+    {
+      "name": "GenMeshSphere",
+      "description": "Generate sphere mesh (standard sphere)",
+      "return": "Mesh",
+      "params": [
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "int",
+          "name": "rings"
+        },
+        {
+          "type": "int",
+          "name": "slices"
+        }
+      ]
+    },
+    {
+      "name": "GenMeshHemiSphere",
+      "description": "Generate half-sphere mesh (no bottom cap)",
+      "return": "Mesh",
+      "params": [
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "int",
+          "name": "rings"
+        },
+        {
+          "type": "int",
+          "name": "slices"
+        }
+      ]
+    },
+    {
+      "name": "GenMeshCylinder",
+      "description": "Generate cylinder mesh",
+      "return": "Mesh",
+      "params": [
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "float",
+          "name": "height"
+        },
+        {
+          "type": "int",
+          "name": "slices"
+        }
+      ]
+    },
+    {
+      "name": "GenMeshTorus",
+      "description": "Generate torus mesh",
+      "return": "Mesh",
+      "params": [
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "float",
+          "name": "size"
+        },
+        {
+          "type": "int",
+          "name": "radSeg"
+        },
+        {
+          "type": "int",
+          "name": "sides"
+        }
+      ]
+    },
+    {
+      "name": "GenMeshKnot",
+      "description": "Generate trefoil knot mesh",
+      "return": "Mesh",
+      "params": [
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "float",
+          "name": "size"
+        },
+        {
+          "type": "int",
+          "name": "radSeg"
+        },
+        {
+          "type": "int",
+          "name": "sides"
+        }
+      ]
+    },
+    {
+      "name": "GenMeshHeightmap",
+      "description": "Generate heightmap mesh from image data",
+      "return": "Mesh",
+      "params": [
+        {
+          "type": "Image",
+          "name": "heightmap"
+        },
+        {
+          "type": "Vector3",
+          "name": "size"
+        }
+      ]
+    },
+    {
+      "name": "GenMeshCubicmap",
+      "description": "Generate cubes-based map mesh from image data",
+      "return": "Mesh",
+      "params": [
+        {
+          "type": "Image",
+          "name": "cubicmap"
+        },
+        {
+          "type": "Vector3",
+          "name": "cubeSize"
+        }
+      ]
+    },
+    {
+      "name": "MeshBoundingBox",
+      "description": "Compute mesh bounding box limits",
+      "return": "BoundingBox",
+      "params": [
+        {
+          "type": "Mesh",
+          "name": "mesh"
+        }
+      ]
+    },
+    {
+      "name": "MeshTangents",
+      "description": "Compute mesh tangents",
+      "return": "void",
+      "params": [
+        {
+          "type": "Mesh *",
+          "name": "mesh"
+        }
+      ]
+    },
+    {
+      "name": "MeshBinormals",
+      "description": "Compute mesh binormals",
+      "return": "void",
+      "params": [
+        {
+          "type": "Mesh *",
+          "name": "mesh"
+        }
+      ]
+    },
+    {
+      "name": "DrawModel",
+      "description": "Draw a model (with texture if set)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Model",
+          "name": "model"
+        },
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "scale"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawModelEx",
+      "description": "Draw a model with extended parameters",
+      "return": "void",
+      "params": [
+        {
+          "type": "Model",
+          "name": "model"
+        },
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "Vector3",
+          "name": "rotationAxis"
+        },
+        {
+          "type": "float",
+          "name": "rotationAngle"
+        },
+        {
+          "type": "Vector3",
+          "name": "scale"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawModelWires",
+      "description": "Draw a model wires (with texture if set)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Model",
+          "name": "model"
+        },
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "float",
+          "name": "scale"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawModelWiresEx",
+      "description": "Draw a model wires (with texture if set) with extended parameters",
+      "return": "void",
+      "params": [
+        {
+          "type": "Model",
+          "name": "model"
+        },
+        {
+          "type": "Vector3",
+          "name": "position"
+        },
+        {
+          "type": "Vector3",
+          "name": "rotationAxis"
+        },
+        {
+          "type": "float",
+          "name": "rotationAngle"
+        },
+        {
+          "type": "Vector3",
+          "name": "scale"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawBoundingBox",
+      "description": "Draw bounding box (wires)",
+      "return": "void",
+      "params": [
+        {
+          "type": "BoundingBox",
+          "name": "box"
+        },
+        {
+          "type": "Color",
+          "name": "color"
+        }
+      ]
+    },
+    {
+      "name": "DrawBillboard",
+      "description": "Draw a billboard texture",
+      "return": "void",
+      "params": [
+        {
+          "type": "Camera",
+          "name": "camera"
+        },
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Vector3",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "size"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "DrawBillboardRec",
+      "description": "Draw a billboard texture defined by source",
+      "return": "void",
+      "params": [
+        {
+          "type": "Camera",
+          "name": "camera"
+        },
+        {
+          "type": "Texture2D",
+          "name": "texture"
+        },
+        {
+          "type": "Rectangle",
+          "name": "source"
+        },
+        {
+          "type": "Vector3",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "size"
+        },
+        {
+          "type": "Color",
+          "name": "tint"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionSpheres",
+      "description": "Detect collision between two spheres",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Vector3",
+          "name": "center1"
+        },
+        {
+          "type": "float",
+          "name": "radius1"
+        },
+        {
+          "type": "Vector3",
+          "name": "center2"
+        },
+        {
+          "type": "float",
+          "name": "radius2"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionBoxes",
+      "description": "Detect collision between two bounding boxes",
+      "return": "bool",
+      "params": [
+        {
+          "type": "BoundingBox",
+          "name": "box1"
+        },
+        {
+          "type": "BoundingBox",
+          "name": "box2"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionBoxSphere",
+      "description": "Detect collision between box and sphere",
+      "return": "bool",
+      "params": [
+        {
+          "type": "BoundingBox",
+          "name": "box"
+        },
+        {
+          "type": "Vector3",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionRaySphere",
+      "description": "Detect collision between ray and sphere",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Ray",
+          "name": "ray"
+        },
+        {
+          "type": "Vector3",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionRaySphereEx",
+      "description": "Detect collision between ray and sphere, returns collision point",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Ray",
+          "name": "ray"
+        },
+        {
+          "type": "Vector3",
+          "name": "center"
+        },
+        {
+          "type": "float",
+          "name": "radius"
+        },
+        {
+          "type": "Vector3 *",
+          "name": "collisionPoint"
+        }
+      ]
+    },
+    {
+      "name": "CheckCollisionRayBox",
+      "description": "Detect collision between ray and box",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Ray",
+          "name": "ray"
+        },
+        {
+          "type": "BoundingBox",
+          "name": "box"
+        }
+      ]
+    },
+    {
+      "name": "GetCollisionRayMesh",
+      "description": "Get collision info between ray and mesh",
+      "return": "RayHitInfo",
+      "params": [
+        {
+          "type": "Ray",
+          "name": "ray"
+        },
+        {
+          "type": "Mesh",
+          "name": "mesh"
+        },
+        {
+          "type": "Matrix",
+          "name": "transform"
+        }
+      ]
+    },
+    {
+      "name": "GetCollisionRayModel",
+      "description": "Get collision info between ray and model",
+      "return": "RayHitInfo",
+      "params": [
+        {
+          "type": "Ray",
+          "name": "ray"
+        },
+        {
+          "type": "Model",
+          "name": "model"
+        }
+      ]
+    },
+    {
+      "name": "GetCollisionRayTriangle",
+      "description": "Get collision info between ray and triangle",
+      "return": "RayHitInfo",
+      "params": [
+        {
+          "type": "Ray",
+          "name": "ray"
+        },
+        {
+          "type": "Vector3",
+          "name": "p1"
+        },
+        {
+          "type": "Vector3",
+          "name": "p2"
+        },
+        {
+          "type": "Vector3",
+          "name": "p3"
+        }
+      ]
+    },
+    {
+      "name": "GetCollisionRayGround",
+      "description": "Get collision info between ray and ground plane (Y-normal plane)",
+      "return": "RayHitInfo",
+      "params": [
+        {
+          "type": "Ray",
+          "name": "ray"
+        },
+        {
+          "type": "float",
+          "name": "groundHeight"
+        }
+      ]
+    },
+    {
+      "name": "InitAudioDevice",
+      "description": "Initialize audio device and context",
+      "return": "void"
+    },
+    {
+      "name": "CloseAudioDevice",
+      "description": "Close the audio device and context",
+      "return": "void"
+    },
+    {
+      "name": "IsAudioDeviceReady",
+      "description": "Check if audio device has been initialized successfully",
+      "return": "bool"
+    },
+    {
+      "name": "SetMasterVolume",
+      "description": "Set master volume (listener)",
+      "return": "void",
+      "params": [
+        {
+          "type": "float",
+          "name": "volume"
+        }
+      ]
+    },
+    {
+      "name": "LoadWave",
+      "description": "Load wave data from file",
+      "return": "Wave",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "LoadWaveFromMemory",
+      "description": "Load wave from memory buffer, fileType refers to extension: i.e. '.wav'",
+      "return": "Wave",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileType"
+        },
+        {
+          "type": "const unsigned char *",
+          "name": "fileData"
+        },
+        {
+          "type": "int",
+          "name": "dataSize"
+        }
+      ]
+    },
+    {
+      "name": "LoadSound",
+      "description": "Load sound from file",
+      "return": "Sound",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "LoadSoundFromWave",
+      "description": "Load sound from wave data",
+      "return": "Sound",
+      "params": [
+        {
+          "type": "Wave",
+          "name": "wave"
+        }
+      ]
+    },
+    {
+      "name": "UpdateSound",
+      "description": "Update sound buffer with new data",
+      "return": "void",
+      "params": [
+        {
+          "type": "Sound",
+          "name": "sound"
+        },
+        {
+          "type": "const void *",
+          "name": "data"
+        },
+        {
+          "type": "int",
+          "name": "samplesCount"
+        }
+      ]
+    },
+    {
+      "name": "UnloadWave",
+      "description": "Unload wave data",
+      "return": "void",
+      "params": [
+        {
+          "type": "Wave",
+          "name": "wave"
+        }
+      ]
+    },
+    {
+      "name": "UnloadSound",
+      "description": "Unload sound",
+      "return": "void",
+      "params": [
+        {
+          "type": "Sound",
+          "name": "sound"
+        }
+      ]
+    },
+    {
+      "name": "ExportWave",
+      "description": "Export wave data to file, returns true on success",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Wave",
+          "name": "wave"
+        },
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "ExportWaveAsCode",
+      "description": "Export wave sample data to code (.h), returns true on success",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Wave",
+          "name": "wave"
+        },
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "PlaySound",
+      "description": "Play a sound",
+      "return": "void",
+      "params": [
+        {
+          "type": "Sound",
+          "name": "sound"
+        }
+      ]
+    },
+    {
+      "name": "StopSound",
+      "description": "Stop playing a sound",
+      "return": "void",
+      "params": [
+        {
+          "type": "Sound",
+          "name": "sound"
+        }
+      ]
+    },
+    {
+      "name": "PauseSound",
+      "description": "Pause a sound",
+      "return": "void",
+      "params": [
+        {
+          "type": "Sound",
+          "name": "sound"
+        }
+      ]
+    },
+    {
+      "name": "ResumeSound",
+      "description": "Resume a paused sound",
+      "return": "void",
+      "params": [
+        {
+          "type": "Sound",
+          "name": "sound"
+        }
+      ]
+    },
+    {
+      "name": "PlaySoundMulti",
+      "description": "Play a sound (using multichannel buffer pool)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Sound",
+          "name": "sound"
+        }
+      ]
+    },
+    {
+      "name": "StopSoundMulti",
+      "description": "Stop any sound playing (using multichannel buffer pool)",
+      "return": "void"
+    },
+    {
+      "name": "GetSoundsPlaying",
+      "description": "Get number of sounds playing in the multichannel",
+      "return": "int"
+    },
+    {
+      "name": "IsSoundPlaying",
+      "description": "Check if a sound is currently playing",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Sound",
+          "name": "sound"
+        }
+      ]
+    },
+    {
+      "name": "SetSoundVolume",
+      "description": "Set volume for a sound (1.0 is max level)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Sound",
+          "name": "sound"
+        },
+        {
+          "type": "float",
+          "name": "volume"
+        }
+      ]
+    },
+    {
+      "name": "SetSoundPitch",
+      "description": "Set pitch for a sound (1.0 is base level)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Sound",
+          "name": "sound"
+        },
+        {
+          "type": "float",
+          "name": "pitch"
+        }
+      ]
+    },
+    {
+      "name": "WaveFormat",
+      "description": "Convert wave data to desired format",
+      "return": "void",
+      "params": [
+        {
+          "type": "Wave *",
+          "name": "wave"
+        },
+        {
+          "type": "int",
+          "name": "sampleRate"
+        },
+        {
+          "type": "int",
+          "name": "sampleSize"
+        },
+        {
+          "type": "int",
+          "name": "channels"
+        }
+      ]
+    },
+    {
+      "name": "WaveCopy",
+      "description": "Copy a wave to a new wave",
+      "return": "Wave",
+      "params": [
+        {
+          "type": "Wave",
+          "name": "wave"
+        }
+      ]
+    },
+    {
+      "name": "WaveCrop",
+      "description": "Crop a wave to defined samples range",
+      "return": "void",
+      "params": [
+        {
+          "type": "Wave *",
+          "name": "wave"
+        },
+        {
+          "type": "int",
+          "name": "initSample"
+        },
+        {
+          "type": "int",
+          "name": "finalSample"
+        }
+      ]
+    },
+    {
+      "name": "LoadWaveSamples",
+      "description": "Load samples data from wave as a floats array",
+      "return": "float *",
+      "params": [
+        {
+          "type": "Wave",
+          "name": "wave"
+        }
+      ]
+    },
+    {
+      "name": "UnloadWaveSamples",
+      "description": "Unload samples data loaded with LoadWaveSamples()",
+      "return": "void",
+      "params": [
+        {
+          "type": "float *",
+          "name": "samples"
+        }
+      ]
+    },
+    {
+      "name": "LoadMusicStream",
+      "description": "Load music stream from file",
+      "return": "Music",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileName"
+        }
+      ]
+    },
+    {
+      "name": "LoadMusicStreamFromMemory",
+      "description": "Load music stream from data",
+      "return": "Music",
+      "params": [
+        {
+          "type": "const char *",
+          "name": "fileType"
+        },
+        {
+          "type": "unsigned char*",
+          "name": "data"
+        },
+        {
+          "type": "int",
+          "name": "dataSize"
+        }
+      ]
+    },
+    {
+      "name": "UnloadMusicStream",
+      "description": "Unload music stream",
+      "return": "void",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        }
+      ]
+    },
+    {
+      "name": "PlayMusicStream",
+      "description": "Start music playing",
+      "return": "void",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        }
+      ]
+    },
+    {
+      "name": "IsMusicPlaying",
+      "description": "Check if music is playing",
+      "return": "bool",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        }
+      ]
+    },
+    {
+      "name": "UpdateMusicStream",
+      "description": "Updates buffers for music streaming",
+      "return": "void",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        }
+      ]
+    },
+    {
+      "name": "StopMusicStream",
+      "description": "Stop music playing",
+      "return": "void",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        }
+      ]
+    },
+    {
+      "name": "PauseMusicStream",
+      "description": "Pause music playing",
+      "return": "void",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        }
+      ]
+    },
+    {
+      "name": "ResumeMusicStream",
+      "description": "Resume playing paused music",
+      "return": "void",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        }
+      ]
+    },
+    {
+      "name": "SetMusicVolume",
+      "description": "Set volume for music (1.0 is max level)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        },
+        {
+          "type": "float",
+          "name": "volume"
+        }
+      ]
+    },
+    {
+      "name": "SetMusicPitch",
+      "description": "Set pitch for a music (1.0 is base level)",
+      "return": "void",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        },
+        {
+          "type": "float",
+          "name": "pitch"
+        }
+      ]
+    },
+    {
+      "name": "GetMusicTimeLength",
+      "description": "Get music time length (in seconds)",
+      "return": "float",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        }
+      ]
+    },
+    {
+      "name": "GetMusicTimePlayed",
+      "description": "Get current music time played (in seconds)",
+      "return": "float",
+      "params": [
+        {
+          "type": "Music",
+          "name": "music"
+        }
+      ]
+    },
+    {
+      "name": "InitAudioStream",
+      "description": "Init audio stream (to stream raw audio pcm data)",
+      "return": "AudioStream",
+      "params": [
+        {
+          "type": "unsigned int",
+          "name": "sampleRate"
+        },
+        {
+          "type": "unsigned int",
+          "name": "sampleSize"
+        },
+        {
+          "type": "unsigned int",
+          "name": "channels"
+        }
+      ]
+    },
+    {
+      "name": "UpdateAudioStream",
+      "description": "Update audio stream buffers with data",
+      "return": "void",
+      "params": [
+        {
+          "type": "AudioStream",
+          "name": "stream"
+        },
+        {
+          "type": "const void *",
+          "name": "data"
+        },
+        {
+          "type": "int",
+          "name": "samplesCount"
+        }
+      ]
+    },
+    {
+      "name": "CloseAudioStream",
+      "description": "Close audio stream and free memory",
+      "return": "void",
+      "params": [
+        {
+          "type": "AudioStream",
+          "name": "stream"
+        }
+      ]
+    },
+    {
+      "name": "IsAudioStreamProcessed",
+      "description": "Check if any audio stream buffers requires refill",
+      "return": "bool",
+      "params": [
+        {
+          "type": "AudioStream",
+          "name": "stream"
+        }
+      ]
+    },
+    {
+      "name": "PlayAudioStream",
+      "description": "Play audio stream",
+      "return": "void",
+      "params": [
+        {
+          "type": "AudioStream",
+          "name": "stream"
+        }
+      ]
+    },
+    {
+      "name": "PauseAudioStream",
+      "description": "Pause audio stream",
+      "return": "void",
+      "params": [
+        {
+          "type": "AudioStream",
+          "name": "stream"
+        }
+      ]
+    },
+    {
+      "name": "ResumeAudioStream",
+      "description": "Resume audio stream",
+      "return": "void",
+      "params": [
+        {
+          "type": "AudioStream",
+          "name": "stream"
+        }
+      ]
+    },
+    {
+      "name": "IsAudioStreamPlaying",
+      "description": "Check if audio stream is playing",
+      "return": "bool",
+      "params": [
+        {
+          "type": "AudioStream",
+          "name": "stream"
+        }
+      ]
+    },
+    {
+      "name": "StopAudioStream",
+      "description": "Stop audio stream",
+      "return": "void",
+      "params": [
+        {
+          "type": "AudioStream",
+          "name": "stream"
+        }
+      ]
+    },
+    {
+      "name": "SetAudioStreamVolume",
+      "description": "Set volume for audio stream (1.0 is max level)",
+      "return": "void",
+      "params": [
+        {
+          "type": "AudioStream",
+          "name": "stream"
+        },
+        {
+          "type": "float",
+          "name": "volume"
+        }
+      ]
+    },
+    {
+      "name": "SetAudioStreamPitch",
+      "description": "Set pitch for audio stream (1.0 is base level)",
+      "return": "void",
+      "params": [
+        {
+          "type": "AudioStream",
+          "name": "stream"
+        },
+        {
+          "type": "float",
+          "name": "pitch"
+        }
+      ]
+    },
+    {
+      "name": "SetAudioStreamBufferSizeDefault",
+      "description": "Default size for new audio streams",
+      "return": "void",
+      "params": [
+        {
+          "type": "int",
+          "name": "size"
+        }
+      ]
+    }
+  ]
+}
